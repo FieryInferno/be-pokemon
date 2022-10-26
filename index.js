@@ -24,7 +24,7 @@ app.get('/rename/:n', (req, res) => {
   const {n} = req.params;
 
   return res.status(200).send({
-    fibonacci: fibonacci(parseInt(n)),
+    fibonacci: n === '1' ? 0 : fibonacci(parseInt(n) - 1),
     rename: parseInt(n) + 1,
   });
 })
