@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.listen(5000, () => console.log('Server is running on port 5000'));
 
+app.get('/', res.send('Welcome to Pokemon API'));
+
 app.get('/catch', (req, res) => {
   return res.status(200).send({
     catchStatus: Math.floor(Math.random() * 2),
